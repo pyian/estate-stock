@@ -39,6 +39,7 @@ Value increased depends on the year of normalized value (1.0)
 2018-01-29 21:59    Cleaned hk estate price data
 2018-01-29 22:28    Compared hk stk and est data
 
+
 # TODOs
 
 - [ ] Adjust estate value by tax, fees and rental
