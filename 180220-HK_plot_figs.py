@@ -1,7 +1,7 @@
 """
 2018-02-22 17:42
 
-Tools for the stocks and estate project
+Plot HK stocks & estate figs
 """
 
 import matplotlib.pyplot as plt
