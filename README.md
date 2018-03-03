@@ -1,7 +1,7 @@
 Estate vs Stocks
 ================
 
-![moving](hk_figs/movie.gif)
+![moving](images/movie.gif)
 
 # Reddit - Equity vs Real Estate
 
