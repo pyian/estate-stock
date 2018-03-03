@@ -2,12 +2,16 @@
 2018-02-22 17:42
 
 Plot HK stocks & estate figs
+
+Log:
+2018-03-02  Added the red blob (point of normalization)
 """
 
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
+from datetime import datetime
 
 sns.set_style('white')
 sns.set_context("poster")
@@ -34,14 +38,20 @@ def normalize_df(df, year, month):
     return df
 
 
-def comparison(df_stk, df_est, year, month):
+def comparison_plot(df_stk, df_est, year, month):
     """Paremeters:
     (df_stock, df_estate)
     plot by norm_val column
     """
-    plt.figure(dpi=200)
+    plt.figure(dpi=100)
+    # Plot time-series
     plt.plot(df_stk.norm_val, label='Stock')
     plt.plot(df_est.norm_val, label='Estate')
+    # Point of Normalization
+    plt.plot(np.datetime64(datetime(year, month, 1)), 1, 'r.',
+             markersize=15,
+             label='Point of Normalization')
+    # Config plot
     plt.legend(loc=2)
     title = 'Stock vs Estate Value (Normalized at '\
         + str(year) + '-' + str(month) + ')'
@@ -61,4 +71,4 @@ for year in years:
     for month in months:
         hk_est = normalize_df(hk_est, year, month)
         hk_stk = normalize_df(hk_stk, year, month)
-        comparison(hk_stk, hk_est, year, month)
+        comparison_plot(hk_stk, hk_est, year, month)
