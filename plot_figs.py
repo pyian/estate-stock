@@ -23,6 +23,7 @@ import animation
 sns.set_style('white')
 sns.set_context("poster")
 
+
 def read_data(est_file, stk_file):
     est_data = pd.read_csv(est_file)
     est_data.date = pd.to_datetime(est_data.date, format='%Y-%m-%d')
@@ -33,6 +34,7 @@ def read_data(est_file, stk_file):
     stk_data.date = pd.to_datetime(stk_data.date, format='%Y-%m-%d')
     stk_data = stk_data.set_index('date')
     return est_data, stk_data
+
 
 def normalize_df(df, year, month):
     """ Parameters:
@@ -82,6 +84,7 @@ def comparison_plot(df_stk, df_est, year, month, fig_name):
 
 # main script
 
+
 def run_script(est_file, stk_file, fig_name, years, months, png_dir):
     est_data, stk_data = read_data(est_file, stk_file)
 
@@ -91,7 +94,7 @@ def run_script(est_file, stk_file, fig_name, years, months, png_dir):
             stk_data = normalize_df(stk_data, year, month)
             comparison_plot(stk_data, est_data, year, month, fig_name)
     print('Figure Plotted')
-    
+
     # animation
     animation.animate_all_pngs(png_dir)
 
@@ -111,7 +114,7 @@ if __name__ == '__main__':
     stk_file = 'data/stocks/^FTSE.csv'   # require date & price column
     fig_name = 'uk_figs'
     png_dir = './uk_figs/'
-    
+
     years = np.arange(1993, 2015)
     months = [3, 6, 9, 12]      # Plot quarterly
     run_script(est_file, stk_file, fig_name, years, months, png_dir)

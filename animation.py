@@ -7,6 +7,7 @@ returns: a .gif file
 import os
 import imageio
 
+
 def animate_all_pngs(png_dir):
     """input directory for .png files"""
 
@@ -37,6 +38,7 @@ def animate_all_pngs(png_dir):
 
     imageio.mimsave(png_dir + 'movie.gif', images)
     print('gif wrote to {}'.format(png_dir))
+
 
 if __name__ == '__main__':
     png_dir = "./hk_figs/"
