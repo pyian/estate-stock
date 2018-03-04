@@ -1,13 +1,26 @@
 Estate vs Stocks
 ================
 
-![moving](images/movie.gif)
+__United Kingdom__
 
-# Reddit - Equity vs Real Estate
+![UK_moving](images/uk.gif)
 
-> ref: https://www.reddit.com/r/investing/comments/7n79zz/equity_vs_real_estate/
+__Hong Kong__
 
-## Assumptions
+![HK_moving](images/hk.gif)
+
+> ref Reddit - Equity vs Real Estate: https://www.reddit.com/r/investing/comments/7n79zz/equity_vs_real_estate/
+
+# Data Sources
+
+| Country | Estate            | Stock           | Sources                   |
+|:--------|:------------------|:----------------|:--------------------------|
+| UK      | House Price Index | FTSE 100        | Nationwide, Yahoo Finance |
+| HK      | House Price Index | Hang Seng Index | HK GOV, Yahoo Finance     |
+| USA     | House Price Index | S&P 500         | Yahoo Finance             |
+| JPN     | House Price Index | Nikkei 225      | Yahoo Finance             |
+
+__Assumptions (Estate)__
 
 Average Initial Down Payment    20 %
 
@@ -25,15 +38,6 @@ Average Rental Cost             5 %
 
 Average Net Rental Yield        4 %
 
-- [X] Get stock benchmark data
-- [ ] Get housing benchmark data (GOT UK, HK)
-
-
-# NOTE
-
-hk.csv
-
-100 at 1990
 
 __Normalization__
 
@@ -42,22 +46,10 @@ Normalized = Original[i] / Original[0]
 Value increased depends on the year of normalized value (1.0)
 
 
-# LOG
-
-2018-01-29 21:36    Inspecting data, cleaned stock data
-
-2018-01-29 21:59    Cleaned hk estate price data
-
-2018-01-29 22:28    Compared hk stk and est data
-
-2018-02-22 21:32    Plotted figs and made a gif
-
-2018-03-03 17:50    Added red blob
-
 # TODOs
 
 - [ ] Adjust estate value by tax, fees and rental
 
 # IDEAS
 
-- [ ] Normalize the value on each year, compare earnings
+- [ ] Normalize value each year, compare earnings
